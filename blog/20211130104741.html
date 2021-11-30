@@ -17,8 +17,8 @@
   gtag('config', 'G-SDHRVPJTWN');
 </script>
 
-<title>Hi, Silicon Valley's People - Silicon Valley's Perl News Letters</title>
-<meta name="description" content="Hi, Silicon Valley's People. I'm Yuki Kimoto, the one of messengers of Perl.">
+<title>Serve List of Directories on your Command Line - Mojolicious::Plugin::Directory::Stylish - Silicon Valley's Perl News Letters</title>
+<meta name="description" content="Today's fresh and healthy Perl information is how to serve the list of directories.">
   </head>
   <body>
     <div class="container">
@@ -39,9 +39,9 @@
 
   </div>
   <div class="middle">
-    <h2><a href="/blog/20211116104914.html">Hi, Silicon Valley's People</a></h2>
+    <h2><a href="/blog/20211130104741.html">Serve List of Directories on your Command Line - Mojolicious::Plugin::Directory::Stylish</a></h2>
 <p>
-  Hi, Silicon Valley's People. I'm Yuki Kimoto, the one of messengers of Perl.
+  Today's fresh and healthy <a href="https://en.perlzemi.com">Perl</a> information is how to serve the list of directories.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -59,13 +59,48 @@
 
 
 <p>
-  I decides that the place of the Perl information activiteis in the online is <a href="https://en.wikipedia.org/wiki/Silicon_Valley">Silicon Valley</a>.
+  You can use <a href="https://metacpan.org/pod/Mojolicious::Plugin::Directory::Stylish">Mojolicious::Plugin::Directory::Stylish</a>. This is a <a href="https://en.mojolicious.perlzemi.com/">Mojolicious</a> plugin.
+</p>
+<h3>Installation</h3>
+<p>
+  You can install Mojolicious::Plugin::Directory::Stylish using <a href="https://en.perlzemi.com/blog/20101027127859.html">cpanm</a> command or <a href="https://en.perlzemi.com/blog/20100504127089.html">cpan</a> command.
+</p>
+<pre>
+# cpanm
+cpanm Mojolicious::Plugin::Directory::Stylish
+
+# cpan
+cpan Mojolicious::Plugin::Directory::Stylish
+</pre>
+<h3>Serve List of Directories</h3>
+<p>
+  Serve List of Directories.
+</p>
+<pre>
+#!/usr/bin/env perl
+
+use Mojolicious::Lite;
+plugin 'Directory::Stylish';
+app-&gt;start('daemon');
+</pre>
+<p>
+  You can serve the list of directories on your command line.
+</p>
+<pre>
+perl -Mojo -E 'a-&gt;plugin("Directory::Stylish")-&gt;start' daemon
+</pre>
+<p>
+  Let's access the following URL.
+</p>
+<pre>
+http://YourHostName:3000
+</pre>
+<h4>Outputs</h4>
+<p>
+  You will see the following outputs.
 </p>
 <p>
-  At first, I introduce Perl. Perl is the highest misunderstanding language in Silicon Valley.
-</p>
-<p>
-  We resolve the misunderstanding with the fair, fresh, healthful Perl informaiton.
+  <img src="/images/mojolicious_plugin_directory_stylish.png" style="border:1px solid #ddd">
 </p>
 
   </div>

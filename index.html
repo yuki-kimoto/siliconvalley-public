@@ -38,6 +38,68 @@
     
   </div>
   <div class="middle">
+    <div class="day">2021/11/30</div>
+<h2><a href="/blog/20211130104741.html">Serve List of Directories on your Command Line - Mojolicious::Plugin::Directory::Stylish</a></h2>
+<p>
+  Today's fresh and healthy <a href="https://en.perlzemi.com">Perl</a> information is how to serve the list of directories.
+</p>
+<p>
+  You can use <a href="https://metacpan.org/pod/Mojolicious::Plugin::Directory::Stylish">Mojolicious::Plugin::Directory::Stylish</a>. This is a <a href="https://en.mojolicious.perlzemi.com/">Mojolicious</a> plugin.
+</p>
+<h3>Installation</h3>
+<p>
+  You can install Mojolicious::Plugin::Directory::Stylish using <a href="https://en.perlzemi.com/blog/20101027127859.html">cpanm</a> command or <a href="https://en.perlzemi.com/blog/20100504127089.html">cpan</a> command.
+</p>
+<pre>
+# cpanm
+cpanm Mojolicious::Plugin::Directory::Stylish
+
+# cpan
+cpan Mojolicious::Plugin::Directory::Stylish
+</pre>
+<h3>Serve List of Directories</h3>
+<p>
+  Serve List of Directories.
+</p>
+<pre>
+#!/usr/bin/env perl
+
+use Mojolicious::Lite;
+plugin 'Directory::Stylish';
+app-&gt;start('daemon');
+</pre>
+<p>
+  You can serve the list of directories on your command line.
+</p>
+<pre>
+perl -Mojo -E 'a-&gt;plugin("Directory::Stylish")-&gt;start' daemon
+</pre>
+<p>
+  Let's access the following URL.
+</p>
+<pre>
+http://YourHostName:3000
+</pre>
+<h4>Outputs</h4>
+<p>
+  You will see the following outputs.
+</p>
+<p>
+  <img src="/images/mojolicious_plugin_directory_stylish.png" style="border:1px solid #ddd">
+</p>
+
+
+  </div>
+  <div class="bottom">
+    
+  </div>
+</div>
+
+<div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
     <div class="day">2021/11/22</div>
 <h2><a href="/blog/20211122154818.html">Perl Latest Version in 2021</a></h2>
 <p>
@@ -125,8 +187,9 @@
         </div>
       </div>
       <div class="footer">
-        <!-- footer -->
-<a href="https://perlclub.net/">Perl Club</a>
+        <div class="perlri_link">
+  <a rel="nofollow" href="https://perlclub.net/en">Perl Club</a>
+</div>
 
       </div>
     </div>
