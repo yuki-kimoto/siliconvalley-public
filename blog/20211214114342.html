@@ -17,8 +17,8 @@
   gtag('config', 'G-SDHRVPJTWN');
 </script>
 
-<title>Play Perl on the web - PerlBanjo.com - Silicon Valley's Perl News Letters</title>
-<meta name="description" content="Perl Club delivers fresh, healthy, fair, practical, lively information of Perl.">
+<title>Setup Perl environment on Github Action - Silicon Valley's Perl News Letters</title>
+<meta name="description" content="Do you find Github Actions to setup all versions of Perl.">
   </head>
   <body>
     <div class="container">
@@ -39,9 +39,9 @@
 
   </div>
   <div class="middle">
-    <h2><a href="/blog/20211213135901.html">Play Perl on the web - PerlBanjo.com</a></h2>
+    <h2><a href="/blog/20211214114342.html">Setup Perl environment on Github Action</a></h2>
 <p>
-  Perl Club delivers fresh, healthy, fair, practical, lively information of Perl.
+  Do you find Github Actions to setup all versions of <a href="https://en.perlzemi.com/">Perl</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -59,22 +59,55 @@
 
 
 <p>
-  We were asked for "There is a way to execute Perl on the web".
+  "Setup Perl environment" is useful.
 </p>
 <p>
-  Today We introduce PerlBanjo.com. You can play Perl on the web using PerlBanjo.com.
-</p>
-<p>
-  <a href="https://perlbanjo.com/">PerlBanjo.com</a>
-</p>
-<p>
-  You can execute Perl programs easily on the web.
+  <a href="https://github.com/marketplace/actions/setup-perl-environment">Setup Perl environment</a>
 </p>
 <pre>
-use strict;
-use warnings;
+Basic:
 
-print "Hello\n";
+steps:
+- uses: actions/checkout@v2
+- uses: shogo82148/actions-setup-perl@v1
+  with:
+    perl-version: '5.34'
+- run: cpanm --installdeps .
+- run: prove -lv t
+</pre>
+<p>
+  Perl Club use "Setup Perl environment" on Gihub Action in <a href="https://github.com/yuki-kimoto/SPVM">SPVM</a> development to test old Perl 5.8.9.
+</p>
+<h3>Examples</h3>
+<p>
+  See the Linux example. "Setup Perl environment" has <a href="https://en.perlzemi.com/blog/20101027127859.html">cpanm</a>. You can install Perl modules using cpanm.
+</p>
+<pre>
+name: linux-5.8.9
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: shogo82148/actions-setup-perl@v1
+      with:
+        perl-version: '5.8.9'
+    - run: cpanm ExtUtils::CBuilder
+    - name: perl Makefile.PL
+      run: perl Makefile.PL
+    - name: make
+      run: make
+    - name: make disttest
+      run: make disttest
 </pre>
 
   </div>

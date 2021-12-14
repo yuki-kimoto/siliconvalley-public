@@ -38,6 +38,75 @@
     
   </div>
   <div class="middle">
+    <div class="day">2021/12/14</div>
+<h2><a href="/blog/20211214114342.html">Setup Perl environment on Github Action</a></h2>
+<p>
+  Do you find Github Actions to setup all versions of <a href="https://en.perlzemi.com/">Perl</a>.
+</p>
+<p>
+  "Setup Perl environment" is useful.
+</p>
+<p>
+  <a href="https://github.com/marketplace/actions/setup-perl-environment">Setup Perl environment</a>
+</p>
+<pre>
+Basic:
+
+steps:
+- uses: actions/checkout@v2
+- uses: shogo82148/actions-setup-perl@v1
+  with:
+    perl-version: '5.34'
+- run: cpanm --installdeps .
+- run: prove -lv t
+</pre>
+<p>
+  Perl Club use "Setup Perl environment" on Gihub Action in <a href="https://github.com/yuki-kimoto/SPVM">SPVM</a> development to test old Perl 5.8.9.
+</p>
+<h3>Examples</h3>
+<p>
+  See the Linux example. "Setup Perl environment" has <a href="https://en.perlzemi.com/blog/20101027127859.html">cpanm</a>. You can install Perl modules using cpanm.
+</p>
+<pre>
+name: linux-5.8.9
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: shogo82148/actions-setup-perl@v1
+      with:
+        perl-version: '5.8.9'
+    - run: cpanm ExtUtils::CBuilder
+    - name: perl Makefile.PL
+      run: perl Makefile.PL
+    - name: make
+      run: make
+    - name: make disttest
+      run: make disttest
+</pre>
+
+
+  </div>
+  <div class="bottom">
+    
+  </div>
+</div>
+
+<div class="entry">
+  <div class="top">
+    
+  </div>
+  <div class="middle">
     <div class="day">2021/12/13</div>
 <h2><a href="/blog/20211213135901.html">Play Perl on the web - PerlBanjo.com</a></h2>
 <p>
@@ -263,6 +332,9 @@ http://YourHostName:3000
 <div style="text-align:center">
   <div>
     <a href="https://perlclub.net/en"><img src="https://perlclub.net/images/corporate/perl_club_company_logo.png"></a>
+  </div>
+  <div>
+    <b>Perl Club delivers fresh, healthy, fair, practical, lively, peaceful Perl information.</b>
   </div>
 </div>
 
